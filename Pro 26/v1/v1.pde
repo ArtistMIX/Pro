@@ -2,7 +2,7 @@ PImage pic;
 
 //Controller
 int countColumn =40;
-int countRow = 60; //countColumn * 2.85
+int countRow = 60; 
 
 //Generator in Class
 color[] textColor = new color[countColumn*countRow];
@@ -14,14 +14,10 @@ float[] displaySizeHorizon = new float[countColumn*countRow];
 int spaceHorizon = 37;
 int spaceVerticle = 10;
 
-//int[] index = new int[countColumn*countRow];
 
 //Generator
 PFont textFont;
-
-
-String[] text = {"Olympic","Olympic", "Rio", "2016", "2016", "Taiwan", "Hsieh", "Taiwan"};
-
+String[] text = {"Olympic", "Olympic", "Rio", "2016", "2016", "Taiwan", "Hsieh", "Taiwan"};
 
 
 void setup() {
@@ -57,15 +53,6 @@ void setup() {
 void draw() {
   //background(255);
   //image(pic, 0, 0);
-
-
-
-
-
-  //ellipse(i*width/countColumn, j*height/countRow, 50*bright, 50*bright);
-
-
-  //saveFrame("rendering/Rendering####.jpg");
 }
 
 void detect() {
@@ -110,10 +97,6 @@ void textDisplay() {
         textDisplay[countColumn*i+j] = true;
       }
 
-      //bright = map(bright, 0.1, 1.2, 0.5, 2);    
-      //print(bright+",");
-
-
       //Draw
       if (sign[countColumn*i+j] > 0.02 && textDisplay[countColumn*i+j]) {
         textSize(10+displaySizeHorizon[countColumn*i+j]);
@@ -126,8 +109,6 @@ void textDisplay() {
 }
 
 void mousePressed() {
-  //detect();
-  //text(text, temp.x, temp.y, 70, 80);
   saveFrame("rendering/rendering####.jpg");
 }
 
